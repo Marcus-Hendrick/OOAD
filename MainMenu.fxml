@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainMenuController" style="-fx-background-color: #f4f6fb;">
+   <children>
+      <!-- Centered main container -->
+      <HBox alignment="CENTER" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <!-- Left vertical menu -->
+            <VBox alignment="CENTER" prefWidth="200.0" spacing="15.0">
+               <children>
+                  <Label fx:id="welcomeLabel" text="Welcome, Customer" textAlignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="depositButton" mnemonicParsing="false" onAction="#handleDeposit" prefHeight="40.0" prefWidth="180.0" text="1. Deposit"
+                          style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-family: 'Segoe UI'; -fx-background-radius: 6;" />
+                  <Button fx:id="withdrawButton" mnemonicParsing="false" onAction="#handleWithdraw" prefHeight="40.0" prefWidth="180.0" text="2. Withdraw"
+                          style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-family: 'Segoe UI'; -fx-background-radius: 6;" />
+                  <Button fx:id="applyInterestButton" mnemonicParsing="false" onAction="#handleApplyInterest" prefHeight="40.0" prefWidth="180.0" text="3. Apply Interest"
+                          style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-family: 'Segoe UI'; -fx-background-radius: 6;" />
+                  <Button fx:id="createAccountButton" mnemonicParsing="false" onAction="#handleCreateAccount" prefHeight="40.0" prefWidth="180.0" text="4. Create Account"
+                          style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-family: 'Segoe UI'; -fx-background-radius: 6;" />
+                  <Button fx:id="viewHistoryButton" mnemonicParsing="false" onAction="#handleViewHistory" prefHeight="40.0" prefWidth="180.0" text="5. View History"
+                          style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-family: 'Segoe UI'; -fx-background-radius: 6;" />
+                  <Button fx:id="exitButton" mnemonicParsing="false" onAction="#handleExit" prefHeight="40.0" prefWidth="180.0" text="6. Exit"
+                          style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-font-family: 'Segoe UI'; -fx-background-radius: 6;" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="10.0" top="20.0" />
+               </padding>
+            </VBox>
+
+            <!-- Right content area -->
+            <VBox alignment="TOP_CENTER" prefHeight="310.0" prefWidth="350.0" spacing="15.0">
+               <children>
+                  <!-- Account selection pane -->
+                  <VBox fx:id="accountInfoPane" alignment="CENTER" spacing="10.0" visible="false">
+                     <children>
+                        <Label text="Select Account:" />
+                        <ListView fx:id="accountListView" prefHeight="150.0" prefWidth="300.0" />
+                        <HBox alignment="CENTER" spacing="10.0">
+                           <children>
+                              <Button fx:id="selectAccountButton" mnemonicParsing="false" onAction="#handleSelectAccount" text="Select" />
+                              <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#handleCancel" text="Cancel" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+
+                  <!-- Transaction pane -->
+                  <VBox fx:id="transactionPane" alignment="CENTER" spacing="10.0" visible="false">
+                     <children>
+                        <Label fx:id="transactionLabel" text="Enter Amount:" />
+                        <TextField fx:id="amountField" maxWidth="200.0" promptText="0.00" />
+                        <HBox alignment="CENTER" spacing="10.0">
+                           <children>
+                              <Button fx:id="confirmButton" mnemonicParsing="false" onAction="#handleConfirmTransaction" text="Confirm" />
+                              <Button fx:id="backButton" mnemonicParsing="false" onAction="#handleBack" text="Back" />
+                           </children>
+                        </HBox>
+                        <Label fx:id="statusLabel" textFill="GREEN" visible="false" />
+                     </children>
+                  </VBox>
+
+                  <!-- History pane -->
+                  <VBox fx:id="historyPane" alignment="CENTER" spacing="10.0" visible="false">
+                     <children>
+                        <Label text="Transaction History" />
+                        <ListView fx:id="historyListView" prefHeight="150.0" prefWidth="300.0" />
+                        <Button fx:id="closeHistoryButton" mnemonicParsing="false" onAction="#handleCloseHistory" text="Close" />
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="10.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

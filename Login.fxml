@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginController" style="-fx-background-color: #f4f6fb;">
+   <children>
+      <!-- Side-by-side layout: left = login, right = registration -->
+      <HBox alignment="CENTER" spacing="40.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <!-- Login column -->
+            <VBox alignment="CENTER" spacing="15.0">
+               <children>
+                  <Label text="Bank System Login" textAlignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="24.0" />
+                     </font>
+                  </Label>
+                  <VBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <Label text="Username:" />
+                        <TextField fx:id="loginUsernameField" maxWidth="200.0" promptText="Enter username" />
+                        <Label text="Password:" />
+                        <PasswordField fx:id="loginPasswordField" maxWidth="200.0" promptText="Enter password" />
+                        <Label fx:id="errorLabel" textFill="RED" visible="false" />
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <Button fx:id="loginButton" mnemonicParsing="false" onAction="#handleLogin" text="Login"
+                                style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-family: 'Segoe UI'; -fx-background-radius: 6; -fx-padding: 6 16 6 16;" />
+                        <Button fx:id="exitButton" mnemonicParsing="false" onAction="#handleExit" text="Exit"
+                                style="-fx-background-color: #e5e7eb; -fx-text-fill: #111827; -fx-font-family: 'Segoe UI'; -fx-background-radius: 6; -fx-padding: 6 16 6 16;" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="40.0" left="40.0" right="20.0" top="40.0" />
+               </padding>
+            </VBox>
+
+            <!-- Registration column -->
+            <VBox alignment="CENTER" spacing="15.0">
+               <children>
+                  <Label text="Register New Customer" textAlignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="18.0" />
+                     </font>
+                  </Label>
+                  <VBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <TextField fx:id="registerFullNameField" maxWidth="250.0" promptText="Full Name" />
+                        <TextField fx:id="registerAddressField" maxWidth="250.0" promptText="Address" />
+                        <TextField fx:id="registerIdNumberField" maxWidth="250.0" promptText="ID Number" />
+                        <TextField fx:id="registerPhoneField" maxWidth="250.0" promptText="Phone Number" />
+                        <TextField fx:id="registerUsernameField" maxWidth="250.0" promptText="Username" />
+                        <PasswordField fx:id="registerPasswordField" maxWidth="250.0" promptText="Password" />
+                        <!-- Hidden legacy field to satisfy older compiled code that referenced registerPinField -->
+                        <PasswordField fx:id="registerPinField" maxWidth="250.0" visible="false" managed="false" />
+                        <Label fx:id="registerStatusLabel" textFill="GREEN" visible="false" />
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <Button fx:id="registerButton" mnemonicParsing="false" onAction="#handleRegister" text="Register"
+                                style="-fx-background-color: #16a34a; -fx-text-fill: white; -fx-font-family: 'Segoe UI'; -fx-background-radius: 6; -fx-padding: 6 20 6 20;" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="40.0" left="20.0" right="40.0" top="40.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
